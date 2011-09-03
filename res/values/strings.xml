@@ -2,4 +2,5 @@
 <resources>
     <string name="hello">Hello World, AndroidfirstprojectActivity!</string>
     <string name="app_name">Android firstproject</string>
+    <string name="btn1">test button</string>
 </resources>
