@@ -49,7 +49,7 @@ public class AndroidfirstprojectActivity extends Activity {
 			    }catch(IOException e){
 			    	Log.d("test", e.getMessage());
 			    }
-//				new GetImageFileTask().execute("http://yusa.imouto.org/image/b92803b1959999ec2ef4cfa3de80fa99/moe%20192448%20mitha%20seifuku%20thighhighs.jpg","http://yusa.imouto.org/sample/df736b7cadb485bfeafbfc113a53e07c/moe%20192104%20sample.jpg");
+				new GetImageFileTask().execute("http://yusa.imouto.org/image/b92803b1959999ec2ef4cfa3de80fa99/moe%20192448%20mitha%20seifuku%20thighhighs.jpg","http://yusa.imouto.org/sample/df736b7cadb485bfeafbfc113a53e07c/moe%20192104%20sample.jpg");
 //				
 //				try {
 //					URL url = new URL("http://kyamon.com/wp-content/uploads/2011/07/google_logo.jpg");
