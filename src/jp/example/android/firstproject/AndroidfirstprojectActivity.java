@@ -1,5 +1,6 @@
 package jp.example.android.firstproject;
 
+import jp.example.android.firstproject.RecievedActivity;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -7,9 +8,13 @@ import java.io.InputStream;
 import java.net.URL;
 
 import android.app.Activity;
+import android.app.AlarmManager;
 import android.app.Application;
+import android.app.PendingIntent;
 import android.app.WallpaperManager;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.BitmapFactory.Options;
@@ -36,7 +41,7 @@ public class AndroidfirstprojectActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Toast.makeText(getApplicationContext(), "clicked", Toast.LENGTH_LONG).show();
-				
+				/*
 			    BitmapFactory.Options opts = new Options();
 			    opts.inPurgeable = true;
 			    opts.inSampleSize = 3;
@@ -50,7 +55,7 @@ public class AndroidfirstprojectActivity extends Activity {
 			    	Log.d("test", e.getMessage());
 			    }
 				new GetImageFileTask().execute("http://yusa.imouto.org/image/b92803b1959999ec2ef4cfa3de80fa99/moe%20192448%20mitha%20seifuku%20thighhighs.jpg","http://yusa.imouto.org/sample/df736b7cadb485bfeafbfc113a53e07c/moe%20192104%20sample.jpg");
-//				
+				*/
 //				try {
 //					URL url = new URL("http://kyamon.com/wp-content/uploads/2011/07/google_logo.jpg");
 //				    InputStream urlst = url.openStream();
@@ -73,12 +78,17 @@ public class AndroidfirstprojectActivity extends Activity {
 //					File f = new File("file.jpg");
 //					f.delete();
 //				}
-//				
+//	
+		    	Intent i = new Intent(getApplicationContext(), RecievedActivity.class);
+		    	PendingIntent sender = PendingIntent.getBroadcast(AndroidfirstprojectActivity.this, 0, i, 0);
+		    	AlarmManager am = (AlarmManager)getSystemService(ALARM_SERVICE);
+//		    	am.setRepeating(AlarmManager.RTC, System.currentTimeMillis(), 5000, sender);
+		    	am.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+10000, sender);
 			}
 		});
         
     }
-    
+    	
     class GetImageFileTask extends AsyncTask<String, Void, Boolean>{
     	private Exception exception;
 
